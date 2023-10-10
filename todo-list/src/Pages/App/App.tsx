@@ -11,9 +11,6 @@ export const AppComponent: FC<AppProps> = () => {
   return (
     <div className="App">
       <Typography text="Todo List" fontSize="25px" fontColour="white" />
-      {modalActive && (
-        <Typography text="Modal Active" fontSize="25px" fontColour="white" />
-      )}
       {modalActive && <Modal setOpen={setModalActive} />}
       <AddButton launchModal={setModalActive} />
     </div>
