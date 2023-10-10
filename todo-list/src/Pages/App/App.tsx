@@ -1,20 +1,20 @@
-"use-strict";
-import {type FC} from 'react'
-import './App.css';
+import { type FC } from "react";
+import "./App.css";
+import "../../Components/index";
+import { Typography } from "../../Components/index";
 
-interface AppProps {
-  title: string
-}
+interface AppProps {}
 
-export const AppComponent: FC<AppProps> = ({title}) => {
+export const AppComponent: FC<AppProps> = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          {title}
-        </p>
-
+        <Typography
+          text="Hello World"
+          fontSize="50"
+          fontColour="white"
+        ></Typography>
       </header>
     </div>
   );
-}
+};

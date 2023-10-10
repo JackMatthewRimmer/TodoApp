@@ -8,6 +8,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <AppComponent title="hello" />
+    <AppComponent />
   </React.StrictMode>
 );
