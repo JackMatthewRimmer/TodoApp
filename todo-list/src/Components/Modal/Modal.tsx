@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { Field, Formik, Form } from "formik";
+import { Field, Formik, Form, ErrorMessage } from "formik";
 
 interface ModalProps {}
 
@@ -22,8 +22,10 @@ export const Modal: FC<ModalProps> = () => {
       >
         {({ isSubmitting, errors }) => (
           <Form>
-            <Field type="title" name="title"></Field>
-            <Field type="priority" name="priority"></Field>
+            <Field type="title" name="title" />
+            <ErrorMessage name="title" />
+            <Field type="priority" name="priority" />
+            <ErrorMessage name="priority" />
             <button type="submit">Submit</button>
           </Form>
         )}
