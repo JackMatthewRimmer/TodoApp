@@ -11,12 +11,12 @@ export const Typography: FC<
   TypographyProps & HTMLProps<HTMLParagraphElement>
 > = ({ text, fontSize, fontColour, ...otherProps }) => {
   const css = {
-    "font-size": fontSize.toString() + "px",
+    "font-size": fontSize,
     color: fontColour,
   };
   return (
     <p style={css} {...otherProps}>
-      text
+      {text}
     </p>
   );
 };

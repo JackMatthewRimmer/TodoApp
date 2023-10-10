@@ -1,14 +1,15 @@
-import { type FC } from "react";
+import { SetStateAction, type FC, type Dispatch } from "react";
 import { CheckBoxSvg } from "../../Svgs/index";
+interface AddButtonProps {
+  launchModal: Dispatch<SetStateAction<boolean>>;
+}
 
-interface AddButtonProps {}
-
-export const AddButton: FC<AddButtonProps> = () => {
+export const AddButton: FC<AddButtonProps> = ({ launchModal }) => {
   return (
     <CheckBoxSvg
       width={"20px"}
       height={"20px"}
-      onClick={() => alert("hello")}
+      onClick={() => launchModal(true)}
     />
   );
 };
