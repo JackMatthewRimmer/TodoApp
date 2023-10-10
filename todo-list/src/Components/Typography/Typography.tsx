@@ -5,12 +5,14 @@ interface TypographyProps {
   text: string;
   fontSize: CSS.Property.FontSize;
   fontColour?: CSS.Property.Color;
+  fontWeight?: CSS.Property.FontWeight;
 }
 
 export const Typography: FC<
   TypographyProps & HTMLProps<HTMLParagraphElement>
-> = ({ text, fontSize, fontColour, ...otherProps }) => {
+> = ({ text, fontSize, fontColour, fontWeight, ...otherProps }) => {
   const css = {
+    "font-weight": fontWeight,
     "font-size": fontSize,
     color: fontColour,
   };

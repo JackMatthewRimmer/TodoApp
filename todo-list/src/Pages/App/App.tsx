@@ -10,14 +10,12 @@ export const AppComponent: FC<AppProps> = () => {
   const [modalActive, setModalActive] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <Typography text="Hello World" fontSize="50px" fontColour="white" />
-        {modalActive && (
-          <Typography text="Modal Active" fontSize="50px" fontColour="white" />
-        )}
-        <Modal></Modal>
-        <AddButton launchModal={setModalActive} />
-      </header>
+      <Typography text="Todo List" fontSize="25px" fontColour="white" />
+      {modalActive && (
+        <Typography text="Modal Active" fontSize="25px" fontColour="white" />
+      )}
+      {modalActive && <Modal setOpen={setModalActive} />}
+      <AddButton launchModal={setModalActive} />
     </div>
   );
 };
