@@ -1,16 +1,25 @@
-import { type FC } from "react";
+import { type FC, type SVGProps } from "react";
+import type * as CSS from "csstype";
 
-interface CheckBoxSvgProps {}
+interface CheckBoxSvgProps {
+  width: CSS.Property.Width;
+  height: CSS.Property.Height;
+}
 
-export const CheckBoxSvg: FC<CheckBoxSvgProps> = () => {
+export const CheckBoxSvg: FC<CheckBoxSvgProps & SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  ...otherProps
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="#07e90b"
-      width="20px"
-      height="20px"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       stroke="#07e90b"
+      {...otherProps}
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0" />
 

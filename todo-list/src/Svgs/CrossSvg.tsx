@@ -1,17 +1,26 @@
-import { type FC } from "react";
+import { type FC, type SVGProps } from "react";
+import type * as CSS from "csstype";
 
-interface CrossSvgProps {}
+interface CrossSvgProps {
+  width: CSS.Property.Width;
+  height: CSS.Property.Height;
+}
 
-export const CrossSvg: FC<CrossSvgProps> = () => {
+export const CrossSvg: FC<CrossSvgProps & SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  ...otherProps
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="#f00f0f"
-      width="20px"
-      height="20px"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       transform="rotate(-45)"
       stroke="#f00f0f"
+      {...otherProps}
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
