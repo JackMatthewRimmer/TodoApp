@@ -36,10 +36,13 @@ export const Modal: FC<ModalProps> = () => {
           if (!values.priority) {
             errors.priority = "Priority Required";
           }
+          if (values.priority === "") {
+            errors.priority = "Priority Required";
+          }
           return errors;
         }}
       >
-        {() => (
+        {(errors) => (
           <Form>
             <div className="ModalFormSection">
               <div className="ModalFieldTitle">
@@ -65,11 +68,17 @@ export const Modal: FC<ModalProps> = () => {
                 />
               </div>
               <Field
+                as="select"
+                className="ModalField"
                 type="priority"
                 name="priority"
-                className="ModalField"
-                placeholder={"Priority Required"}
-              />
+              >
+                <option value={""} label="Please Select a Priority"></option>
+                <option value={"1"} label="Prority 1"></option>
+                <option value={"2"} label="Priority 2"></option>
+                <option value={"3"} label="Priority 3"></option>
+                <option value={"4"} label="Priority 4"></option>
+              </Field>
             </div>
             <div>
               <button type="submit" className="ModalSubmit">
