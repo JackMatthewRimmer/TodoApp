@@ -17,7 +17,7 @@ interface TodoProviderProps {
 interface todoContext {
   todoContext: TodoData[];
   setTodoContext: Dispatch<SetStateAction<TodoData[]>>;
-  addTodo: (title: string, priorty: string) => void;
+  addTodo: (title: string, priorty: number) => void;
   removeTodo: (item: TodoData) => void;
   modalActive: boolean;
   setModalActive: Dispatch<SetStateAction<boolean>>;
@@ -36,7 +36,7 @@ export const TodoContextProvider: FC<TodoProviderProps> = ({ children }) => {
   const [todoContext, setTodoContext] = useState<TodoData[]>([]);
   const [modalActive, setModalActive] = useState<boolean>(false);
 
-  const addTodo = (title: string, priority: string) => {
+  const addTodo = (title: string, priority: number) => {
     const item: TodoData = {
       uuid: uuidv4(),
       title,
