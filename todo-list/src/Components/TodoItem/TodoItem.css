@@ -1,0 +1,31 @@
+.TodoItemDiv {
+    min-width: 50%;
+    min-height: 40px;
+    border-radius: 5px;
+    display: grid;
+    background-color: 		#2e323b;
+    grid-template-columns: 70% 15% 15%;
+    font-size: 8px;
+}
+
+.TodoTitleDiv {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
+    padding-left: 10px
+}
+
+.TodoPriorityDiv {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TodoSVGDiv {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
