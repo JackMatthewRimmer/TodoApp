@@ -8,8 +8,8 @@ export const AddButton: FC<AddButtonProps> = () => {
   if (modalActive) return null;
   return (
     <CheckBoxSvg
-      width={"20px"}
-      height={"20px"}
+      width={"15px"}
+      height={"15px"}
       onClick={() => setModalActive(true)}
     />
   );

@@ -20,8 +20,8 @@ export const TodoItem: FC<TodoItemProps> = ({ todoData }) => {
       </div>
       <div className="TodoSVGDiv">
         <CrossSvg
-          width={"10px"}
-          height={"10px"}
+          width={"15px"}
+          height={"15px"}
           onClick={() => removeTodo(todoData)}
         />
       </div>

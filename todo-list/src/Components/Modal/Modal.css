@@ -30,8 +30,28 @@
   font-size: 8px;
   padding: 5px;
   text-align: center;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
 }
 
+.ModalFieldTitle {
+  display: flex;
+}
+
+.ModalField:focus{
+  border: 0;
+  outline: none;
+  border-bottom: 2px #fff solid;
+}
+
+.ModalField:label{
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
 
 /* CSS */
 .ModalSubmit {
