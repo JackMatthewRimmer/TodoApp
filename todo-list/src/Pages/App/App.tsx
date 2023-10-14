@@ -8,7 +8,6 @@ import { TodoContextProvider } from "../../Hooks/useTodoContext";
 interface AppProps {}
 
 export const AppComponent: FC<AppProps> = () => {
-  const [modalActive, setModalActive] = useState(false);
   return (
     <TodoContextProvider>
       <div className="App">
@@ -18,8 +17,8 @@ export const AppComponent: FC<AppProps> = () => {
           fontSize="25px"
           fontColour="white"
         />
-        {modalActive && <Modal setOpen={setModalActive} />}
-        {!modalActive && <AddButton launchModal={setModalActive} />}
+        <Modal />
+        <AddButton />
       </div>
     </TodoContextProvider>
   );

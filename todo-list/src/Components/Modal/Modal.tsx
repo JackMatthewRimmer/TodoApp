@@ -1,21 +1,21 @@
-import { SetStateAction, type FC, Dispatch } from "react";
+import { type FC } from "react";
 import { Field, Formik, Form } from "formik";
 import "./Modal.css";
 import { Typography } from "../Typography/Typography";
 import { CrossSvg } from "../../Svgs";
 import { useTodoContext } from "../../Hooks/useTodoContext";
 
-interface ModalProps {
-  setOpen: Dispatch<SetStateAction<boolean>>;
-}
+interface ModalProps {}
 
-export const Modal: FC<ModalProps> = ({ setOpen }) => {
-  const { addTodo } = useTodoContext();
+export const Modal: FC<ModalProps> = () => {
+  const { modalActive, setModalActive, addTodo } = useTodoContext();
 
   const handleSubmit = (values: { title: string; priority: string }) => {
     addTodo(values.title, values.priority);
-    setOpen(false);
+    setModalActive(false);
   };
+
+  if (!modalActive) return null;
 
   return (
     <div className="ModalDiv">
@@ -23,7 +23,7 @@ export const Modal: FC<ModalProps> = ({ setOpen }) => {
         width={"15px"}
         height={"15px"}
         className="ModalCrossButton"
-        onClick={() => setOpen(false)}
+        onClick={() => setModalActive(false)}
       />
       <Formik
         initialValues={{ title: "", priority: "" }}
