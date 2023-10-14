@@ -43,6 +43,9 @@ export const TodoContextProvider: FC<TodoProviderProps> = ({ children }) => {
       priority,
     };
 
+    window.localStorage.setItem("todoData", JSON.stringify(todoContext));
+    console.log(window.localStorage);
+
     setTodoContext([item, ...todoContext]);
   };
 
