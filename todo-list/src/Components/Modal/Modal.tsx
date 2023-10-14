@@ -42,7 +42,13 @@ export const Modal: FC<ModalProps> = () => {
         {() => (
           <Form>
             <div className="ModalFormSection">
-              <Typography text="Title:" fontSize={"10px"} fontWeight={"bold"} />
+              <div className="ModalFieldTitle">
+                <Typography
+                  text="Title:"
+                  fontSize={"6px"}
+                  fontWeight={"bold"}
+                />
+              </div>
               <Field
                 type="title"
                 name="title"
@@ -51,11 +57,13 @@ export const Modal: FC<ModalProps> = () => {
               />
             </div>
             <div className="ModalFormSection">
-              <Typography
-                text="Priority:"
-                fontSize={"10px"}
-                fontWeight={"bold"}
-              />
+              <div className="ModalFieldTitle">
+                <Typography
+                  text="Priority:"
+                  fontSize={"6px"}
+                  fontWeight={"bold"}
+                />
+              </div>
               <Field
                 type="priority"
                 name="priority"

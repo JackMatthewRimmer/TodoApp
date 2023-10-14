@@ -1,7 +1,8 @@
 .ModalDiv {
-    display: grid;
     position: fixed;
+    display: flex;
     align-items: center;
+    justify-content: center;
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -20,13 +21,20 @@
 }
 
 .ModalFormSection {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
   margin-bottom: 15px;
+}
+
+.ModalFieldTitle {
+  display: flex;
+  justify-content: left;
 }
 
 .ModalField {
   font-family: inherit;
   min-height: 100%;
-  min-width: 40%;
   font-size: 8px;
   padding: 5px;
   text-align: center;
@@ -34,10 +42,6 @@
   background-color: transparent;
   border: 0;
   border-bottom: 2px #fff solid;
-}
-
-.ModalFieldTitle {
-  display: flex;
 }
 
 .ModalField:focus{
