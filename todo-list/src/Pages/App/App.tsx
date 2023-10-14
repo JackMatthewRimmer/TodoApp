@@ -10,9 +10,14 @@ export const AppComponent: FC<AppProps> = () => {
   const [modalActive, setModalActive] = useState(false);
   return (
     <div className="App">
-      <Typography text="Todo List" fontSize="25px" fontColour="white" />
+      <Typography
+        text="Todo List"
+        fontWeight={"bold"}
+        fontSize="25px"
+        fontColour="white"
+      />
       {modalActive && <Modal setOpen={setModalActive} />}
-      <AddButton launchModal={setModalActive} />
+      {!modalActive && <AddButton launchModal={setModalActive} />}
     </div>
   );
 };
