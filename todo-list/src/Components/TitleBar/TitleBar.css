@@ -1,4 +1,14 @@
 .TitleBar {
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    max-height: 30px;
+    margin: 20px
+}
+
+.TitleLogoDiv {
+    display: flex;
+    margin-left: 5px;
 }
