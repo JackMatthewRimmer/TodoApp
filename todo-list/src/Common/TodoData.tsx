@@ -1,5 +1,5 @@
 export interface TodoData {
-  id: number;
+  uuid: string;
   title: string;
   priority: string;
 }

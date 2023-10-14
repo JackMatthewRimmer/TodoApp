@@ -8,6 +8,7 @@ import {
   useContext,
 } from "react";
 import { type TodoData } from "../Common";
+import { v4 as uuidv4 } from "uuid";
 
 interface TodoProviderProps {
   children: ReactElement;
@@ -16,7 +17,7 @@ interface TodoProviderProps {
 interface todoContext {
   todoContext: TodoData[];
   setTodoContext: Dispatch<SetStateAction<TodoData[]>>;
-  addTodo: (item: TodoData) => void;
+  addTodo: (title: string, priorty: string) => void;
   removeTodo: (item: TodoData) => void;
 }
 
@@ -32,12 +33,20 @@ export const useTodoContext = () => {
 export const TodoContextProvider: FC<TodoProviderProps> = ({ children }) => {
   const [todoContext, setTodoContext] = useState<TodoData[]>([]);
 
-  const addTodo = (item: TodoData) => {
+  const addTodo = (title: string, priority: string) => {
+    const item: TodoData = {
+      uuid: uuidv4(),
+      title,
+      priority,
+    };
+
     setTodoContext([item, ...todoContext]);
   };
 
   const removeTodo = (item: TodoData) => {
-    setTodoContext(todoContext.filter((todo: TodoData) => todo.id !== item.id));
+    setTodoContext(
+      todoContext.filter((todo: TodoData) => todo.uuid !== item.uuid)
+    );
   };
 
   const contextValue: todoContext = {
