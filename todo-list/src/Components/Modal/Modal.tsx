@@ -2,6 +2,7 @@ import { SetStateAction, type FC, Dispatch } from "react";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import "./Modal.css";
 import { Typography } from "../Typography/Typography";
+import { CrossSvg } from "../../Svgs";
 
 interface ModalProps {
   setOpen: Dispatch<SetStateAction<boolean>>;
@@ -10,6 +11,12 @@ interface ModalProps {
 export const Modal: FC<ModalProps> = ({ setOpen }) => {
   return (
     <div className="ModalDiv">
+      <CrossSvg
+        width={"15px"}
+        height={"15px"}
+        className="ModalCrossButton"
+        onClick={() => setOpen(false)}
+      />
       <Formik
         initialValues={{ title: "", priority: "" }}
         onSubmit={() => setOpen(false)}
@@ -28,11 +35,11 @@ export const Modal: FC<ModalProps> = ({ setOpen }) => {
           <Form>
             <div className="ModalFormSection">
               <Typography text="Title:" fontSize={"10px"} fontWeight={"bold"} />
-              <Field type="title" name="title" className="ModalField" />
-              <ErrorMessage
+              <Field
+                type="title"
                 name="title"
-                className="ModalErrorMessage"
-                component={"div"}
+                className="ModalField"
+                placeholder={"Title Required"}
               />
             </div>
             <div className="ModalFormSection">
@@ -41,11 +48,11 @@ export const Modal: FC<ModalProps> = ({ setOpen }) => {
                 fontSize={"10px"}
                 fontWeight={"bold"}
               />
-              <Field type="priority" name="priority" className="ModalField" />
-              <ErrorMessage
+              <Field
+                type="priority"
                 name="priority"
-                className="ModalErrorMessage"
-                component={"div"}
+                className="ModalField"
+                placeholder={"Priority Required"}
               />
             </div>
             <div>
