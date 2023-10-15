@@ -49,11 +49,8 @@
   border-bottom: 2px #fff solid;
 }
 
-.ModalField:label{
-  position: absolute;
-  top: 15px;
-  left: 0;
-  pointer-events: none;
+.ModalField:hover{
+  background-color: 		#2e323b;
 }
 
 /* CSS */

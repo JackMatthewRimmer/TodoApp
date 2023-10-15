@@ -74,7 +74,7 @@ export const Modal: FC<ModalProps> = () => {
                 name="priority"
               >
                 <option value={0} label="Please Select a Priority"></option>
-                <option value={1} label="Prority 1"></option>
+                <option value={1} label="Priority 1"></option>
                 <option value={2} label="Priority 2"></option>
                 <option value={3} label="Priority 3"></option>
                 <option value={4} label="Priority 4"></option>

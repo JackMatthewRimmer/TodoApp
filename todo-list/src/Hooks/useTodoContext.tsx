@@ -6,6 +6,7 @@ import {
   ReactElement,
   createContext,
   useContext,
+  useEffect
 } from "react";
 import { type TodoData } from "../Common";
 import { v4 as uuidv4 } from "uuid";
@@ -32,8 +33,14 @@ export const useTodoContext = () => {
   return context;
 };
 
+const loadContextFromMemory: () => TodoData[] = () => {
+  const todoContext = window.localStorage.getItem("todoContext")
+  if (todoContext === null) return []
+  return JSON.parse(todoContext)
+}
+
 export const TodoContextProvider: FC<TodoProviderProps> = ({ children }) => {
-  const [todoContext, setTodoContext] = useState<TodoData[]>([]);
+  const [todoContext, setTodoContext] = useState<TodoData[]>(loadContextFromMemory());
   const [modalActive, setModalActive] = useState<boolean>(false);
 
   const addTodo = (title: string, priority: number) => {
@@ -54,6 +61,10 @@ export const TodoContextProvider: FC<TodoProviderProps> = ({ children }) => {
       todoContext.filter((todo: TodoData) => todo.uuid !== item.uuid)
     );
   };
+
+  useEffect(() => {
+    window.localStorage.setItem("todoContext", JSON.stringify(todoContext)) 
+  }, todoContext)
 
   const contextValue: todoContext = {
     todoContext,
